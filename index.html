@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Results Portal — Demo</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="/public/style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="login-card">
+      <h4>Results of Annual Examinations</h4>
+      <button id="themeToggle" class="theme-toggle-btn">🌙 Dark Mode</button>
+
+      <div class="login-main">
+        <form method="get" action="/result" class="theme-form">
+          <div class="label-danger">Sample site — do not impersonate official portals</div>
+
+          <select class="form-control" name="class" id="selectClass">
+            <option value="">--Select an option--</option>
+            <option value="DIPLOMA">DIPLOMA 1st Annual (2025)</option>
+            <option value="HSSC-I-TECH">HSSC-I (INTER-TECH)</option>
+            <option value="HSSC-II-TECH">HSSC-II (INTER-TECH)</option>
+            <option value="HSSC-I">HSSC-I (2025)</option>
+            <option value="HSSC-II">HSSC-II (2025)</option>
+            <option value="SSC-I">SSC-I (2025)</option>
+            <option value="SSC-II">SSC-II (2025)</option>
+          </select>
+
+          <input name="rollNo" class="form-control" type="text" placeholder="Roll No (e.g. 1234444)">
+          <input name="name" class="form-control" type="text" placeholder="Student Name (optional)">
+
+          <div class="form-group mb-0 mt-5">
+            <button class="btn-primary" type="submit">Search Result</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // theme toggle (saved to localStorage)
+    const toggleBtn = document.getElementById("themeToggle");
+    const body = document.body;
+    if(localStorage.getItem("theme")==="dark"){
+      body.classList.add("dark");
+      toggleBtn.innerText = "☀ Light Mode";
+    }
+    toggleBtn.addEventListener("click", ()=>{
+      body.classList.toggle("dark");
+      if(body.classList.contains("dark")){
+        toggleBtn.innerText = "☀ Light Mode";
+        localStorage.setItem("theme","dark");
+      } else {
+        toggleBtn.innerText = "🌙 Dark Mode";
+        localStorage.setItem("theme","light");
+      }
+    });
+  </script>
+</body>
+</html>
