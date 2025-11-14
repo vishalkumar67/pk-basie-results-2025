@@ -1,0 +1,39 @@
+:root{
+  --blue:#0d6efd;
+  --pink:#ff2d95;
+  --white:#ffffff;
+  --gray:#f4f6fb;
+  --dark:#202020;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: "Rubik",sans-serif;
+  background:linear-gradient(160deg,var(--white),var(--gray),#eef2ff);
+  color:var(--dark);
+  transition:background .35s,color .35s;
+}
+body.dark{
+  background:linear-gradient(160deg,#0c0c0c,#1a1a1a,#111);
+  color:#eee;
+}
+.container{ max-width:520px; margin:60px auto; padding:20px;}
+.login-card{ background:var(--white); border-radius:18px; box-shadow:0 10px 28px rgba(0,0,0,0.12); padding:36px;}
+body.dark .login-card{ background:#161616; box-shadow:0 10px 28px rgba(255,45,149,0.18);}
+.login-main{ background:var(--white); padding:22px; border-radius:14px; box-shadow:0 6px 16px rgba(0,0,0,0.08); border-left:5px solid var(--pink)}
+body.dark .login-main{ background:#111; border-left-color:var(--pink)}
+h4{ color:var(--blue); font-weight:700; text-align:center; text-transform:uppercase; margin-top:0;}
+body.dark h4{ color:var(--pink)}
+.form-control{ width:100%; height:52px; border-radius:12px; border:1px solid #ccc; padding:0 12px; font-size:15px; margin-bottom:14px; background:#fbfbff;}
+body.dark .form-control{ background:#1d1d1d; border-color:#444; color:#eee;}
+.form-control:focus{ outline:none; border-color:var(--blue); box-shadow:0 0 0 4px rgba(13,110,253,0.12);}
+body.dark .form-control:focus{ border-color:var(--pink); box-shadow:0 0 0 4px rgba(255,45,149,0.16);}
+
+.btn-primary{ width:100%; height:48px; border-radius:12px; border:none; background:linear-gradient(90deg,var(--blue),var(--pink)); color:#fff; font-weight:600; font-size:16px; cursor:pointer; box-shadow:0 8px 18px rgba(255,45,149,0.22); text-align:center;}
+body.dark .btn-primary{ background:linear-gradient(90deg,var(--pink),var(--blue));}
+.label-danger{ background:linear-gradient(45deg,var(--pink),#ff6fbc); color:#fff; font-weight:700; border-radius:10px; padding:10px; text-align:center; margin-bottom:10px;}
+.theme-toggle-btn{ display:block; margin:12px auto; padding:8px 18px; border-radius:12px; border:none; background:var(--blue); color:#fff; cursor:pointer;}
+body.dark .theme-toggle-btn{ background:var(--pink)}
+.card{ background:var(--white); padding:12px 14px; border-radius:10px; box-shadow:0 6px 16px rgba(0,0,0,0.04); margin-bottom:10px;}
+body.dark .card{ background:#1a1a1a}
+@media(max-width:600px){ .container{ margin:24px 12px; } .login-card{ padding:20px; } .form-control{ height:46px; } .btn-primary{ height:46px; } }
